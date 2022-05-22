@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from "react";
+import Todo from "./components/Todo";
+// setTodo([...todo, "russian", "korean"]);
+import Todoinput from "./components/Todoinput"
 
 function App() {
+  const [todo, setTodo] = useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Todoinput todo={todo} setTodo={setTodo} />
+      <Todo todo={todo} setTodo={setTodo} />
     </div>
   );
 }
